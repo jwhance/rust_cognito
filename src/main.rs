@@ -8,6 +8,7 @@ use cognitoidentityprovider::{
     error::AdminInitiateAuthError, model::AuthFlowType, output::AdminInitiateAuthOutput,
     types::SdkError, Error,
 };
+use colored::*;
 use rpassword::read_password;
 use serde_json::Value;
 
@@ -63,6 +64,7 @@ async fn main() -> Result<(), Error> {
             .unwrap()
             .id_token()
             .unwrap()
+            .blue()
     );
 
     Ok(())
